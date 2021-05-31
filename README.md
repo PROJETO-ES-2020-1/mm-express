@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h1  align="center">MM Express</h1>
 
-Things you may want to cover:
+<h5  align="center"> status:  em desenvolvimento </h5>
+ 
 
-* Ruby version
+<p  align="center"> MM Express é um sistema para gerenciamento das entregas internas para condomínios, com o objetivo de administrar o processo de recebimento e repasse das encomendas para os moradores, além de manter seu histórico para eventuais consultas. </p>
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<h3> Desenvolvedores: </h3>
+* [Glaudemir Leite](https://github.com/glaudemir)
+* [Joanne Silva](https://github.com/joannegabriela)
+* [Rafael Cavalcanti](https://github.com/mrafaelcavalcanti)
