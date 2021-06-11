@@ -1,0 +1,32 @@
+<%= form_with(model: encomenda) do |form| %>
+  <% if encomenda.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(encomenda.errors.count, "error") %> prohibited this encomenda from being saved:</h2>
+
+      <ul>
+        <% encomenda.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :peso %>
+    <%= form.text_field :peso %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remetente %>
+    <%= form.text_field :remetente %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Morador_id %>
+    <%= form.text_field :Morador_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
