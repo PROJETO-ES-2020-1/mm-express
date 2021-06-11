@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data entrega:</strong>
+  <%= @entrega_interna.data_entrega %>
+</p>
+
+<p>
+  <strong>Hora recebida:</strong>
+  <%= @entrega_interna.hora_recebida %>
+</p>
+
+<p>
+  <strong>Recebido por:</strong>
+  <%= @entrega_interna.recebido_por %>
+</p>
+
+<%= link_to 'Edit', edit_entrega_interna_path(@entrega_interna) %> |
+<%= link_to 'Back', entrega_internas_path %>
