@@ -1,3 +1,5 @@
 class EntregaExterna < ApplicationRecord
-  belongs_to :Encomenda
+  has_one :encomenda
+
+  accepts_nested_attributes_for :encomenda, update_only: true
 end
