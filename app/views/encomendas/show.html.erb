@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Peso:</strong>
+  <%= @encomenda.peso %>
+</p>
+
+<p>
+  <strong>Remetente:</strong>
+  <%= @encomenda.remetente %>
+</p>
+
+<p>
+  <strong>Morador:</strong>
+  <%= @encomenda.Morador_id %>
+</p>
+
+<%= link_to 'Edit', edit_encomenda_path(@encomenda) %> |
+<%= link_to 'Back', encomendas_path %>
