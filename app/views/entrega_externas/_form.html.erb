@@ -1,0 +1,37 @@
+<%= form_with(model: entrega_externa) do |form| %>
+  <% if entrega_externa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entrega_externa.errors.count, "error") %> prohibited this entrega_externa from being saved:</h2>
+
+      <ul>
+        <% entrega_externa.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dataChegada %>
+    <%= form.date_select :dataChegada %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horaChegada %>
+    <%= form.time_select :horaChegada %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recebidoPor %>
+    <%= form.text_field :recebidoPor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Encomenda_id %>
+    <%= form.text_field :Encomenda_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

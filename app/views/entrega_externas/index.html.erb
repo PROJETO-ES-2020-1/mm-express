@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Entrega Externas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Datachegada</th>
+      <th>Horachegada</th>
+      <th>Recebidopor</th>
+      <th>Encomenda</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entrega_externas.each do |entrega_externa| %>
+      <tr>
+        <td><%= entrega_externa.dataChegada %></td>
+        <td><%= entrega_externa.horaChegada %></td>
+        <td><%= entrega_externa.recebidoPor %></td>
+        <td><%= entrega_externa.Encomenda_id %></td>
+        <td><%= link_to 'Show', entrega_externa %></td>
+        <td><%= link_to 'Edit', edit_entrega_externa_path(entrega_externa) %></td>
+        <td><%= link_to 'Destroy', entrega_externa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entrega Externa', new_entrega_externa_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Datachegada:</strong>
+  <%= @entrega_externa.dataChegada %>
+</p>
+
+<p>
+  <strong>Horachegada:</strong>
+  <%= @entrega_externa.horaChegada %>
+</p>
+
+<p>
+  <strong>Recebidopor:</strong>
+  <%= @entrega_externa.recebidoPor %>
+</p>
+
+<p>
+  <strong>Encomenda:</strong>
+  <%= @entrega_externa.Encomenda_id %>
+</p>
+
+<%= link_to 'Edit', edit_entrega_externa_path(@entrega_externa) %> |
+<%= link_to 'Back', entrega_externas_path %>
