@@ -1,0 +1,2 @@
+class Morador < ApplicationRecord
+end

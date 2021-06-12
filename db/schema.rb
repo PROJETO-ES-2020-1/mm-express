@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_030241) do
     t.index ["entrega_externa_id"], name: "index_entrega_internas_on_entrega_externa_id"
   end
 
-  add_foreign_key "encomendas", "Moradors"
+  add_foreign_key "encomendas", "moradores"
   add_foreign_key "entrega_externas", "Encomendas"
   add_foreign_key "entrega_internas", "entrega_externas"
 end
