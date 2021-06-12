@@ -1,4 +1,4 @@
-class Createmoradores < ActiveRecord::Migration[6.1]
+class CreateMoradores < ActiveRecord::Migration[6.1]
   def change
     create_table :moradores do |t|
       t.string :nome
