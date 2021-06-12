@@ -15,20 +15,20 @@ ActiveRecord::Schema.define(version: 2021_06_12_041135) do
   create_table "encomendas", force: :cascade do |t|
     t.float "peso"
     t.string "remetente"
-    t.integer "Morador_id", null: false
+    t.integer "morador_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["Morador_id"], name: "index_encomendas_on_Morador_id"
+    t.index ["morador_id"], name: "index_encomendas_on_morador_id"
   end
 
   create_table "entrega_externas", force: :cascade do |t|
     t.date "dataChegada"
     t.time "horaChegada"
     t.string "recebidoPor"
-    t.integer "Encomenda_id", null: false
+    t.integer "encomenda_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["Encomenda_id"], name: "index_entrega_externas_on_Encomenda_id"
+    t.index ["encomenda_id"], name: "index_entrega_externas_on_encomenda_id"
   end
 
   create_table "entrega_internas", force: :cascade do |t|
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_041135) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "encomendas", "Moradors"
-  add_foreign_key "entrega_externas", "Encomendas"
+  add_foreign_key "encomendas", "moradors"
+  add_foreign_key "entrega_externas", "encomendas"
   add_foreign_key "entrega_internas", "entrega_externas"
 end
