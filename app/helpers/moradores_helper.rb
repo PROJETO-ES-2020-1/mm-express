@@ -1,2 +1,2 @@
-module moradoresHelper
+module MoradoresHelper
 end
