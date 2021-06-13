@@ -1,10 +1,10 @@
-<%= form_with(model: morador) do |form| %>
-  <% if morador.errors.any? %>
+<%= form_with(model: usuario) do |form| %>
+  <% if usuario.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(morador.errors.count, "error") %> prohibited this morador from being saved:</h2>
+      <h2><%= pluralize(usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
 
       <ul>
-        <% morador.errors.each do |error| %>
+        <% usuario.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -37,8 +37,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :bloco %>
-    <%= form.number_field :bloco %>
+    <%= form.label :bloco_residencia %>
+    <%= form.number_field :bloco_residencia %>
   </div>
 
   <div class="actions">

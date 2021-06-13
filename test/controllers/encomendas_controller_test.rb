@@ -17,7 +17,7 @@ class EncomendasControllerTest < ActionDispatch::IntegrationTest
 
   test "should create encomenda" do
     assert_difference('Encomenda.count') do
-      post encomendas_url, params: { encomenda: { Morador_id: @encomenda.Morador_id, peso: @encomenda.peso, remetente: @encomenda.remetente } }
+      post encomendas_url, params: { encomenda: { usuario_id: @encomenda.usuario_id, peso: @encomenda.peso, remetente: @encomenda.remetente } }
     end
 
     assert_redirected_to encomenda_url(Encomenda.last)
@@ -34,7 +34,7 @@ class EncomendasControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update encomenda" do
-    patch encomenda_url(@encomenda), params: { encomenda: { Morador_id: @encomenda.Morador_id, peso: @encomenda.peso, remetente: @encomenda.remetente } }
+    patch encomenda_url(@encomenda), params: { encomenda: { usuario_id: @encomenda.usuario_id, peso: @encomenda.peso, remetente: @encomenda.remetente } }
     assert_redirected_to encomenda_url(@encomenda)
   end
 

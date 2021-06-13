@@ -14,7 +14,7 @@ class EncomendasTest < ApplicationSystemTestCase
     visit encomendas_url
     click_on "New Encomenda"
 
-    fill_in "Morador", with: @encomenda.Morador_id
+    fill_in "Morador", with: @encomenda.usuario_id
     fill_in "Peso", with: @encomenda.peso
     fill_in "Remetente", with: @encomenda.remetente
     click_on "Create Encomenda"
@@ -27,7 +27,7 @@ class EncomendasTest < ApplicationSystemTestCase
     visit encomendas_url
     click_on "Edit", match: :first
 
-    fill_in "Morador", with: @encomenda.Morador_id
+    fill_in "Morador", with: @encomenda.usuario_id
     fill_in "Peso", with: @encomenda.peso
     fill_in "Remetente", with: @encomenda.remetente
     click_on "Update Encomenda"

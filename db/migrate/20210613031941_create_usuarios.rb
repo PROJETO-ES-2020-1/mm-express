@@ -1,12 +1,13 @@
-class CreateMoradores < ActiveRecord::Migration[6.1]
+class CreateUsuarios < ActiveRecord::Migration[6.1]
   def change
-    create_table :moradores do |t|
+    create_table :usuarios do |t|
       t.string :nome
       t.string :email
       t.string :telefone
       t.string :cpf
       t.integer :numero_residencia
-      t.integer :bloco
+      t.integer :bloco_residencia
+      t.boolean :isMorador, :default => true
 
       t.timestamps
     end

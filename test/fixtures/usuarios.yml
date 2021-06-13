@@ -6,7 +6,8 @@ one:
   telefone: MyString
   cpf: MyString
   numero_residencia: 1
-  bloco: 1
+  bloco_residencia: 1
+  isMorador: false
 
 two:
   nome: MyString
@@ -14,4 +15,5 @@ two:
   telefone: MyString
   cpf: MyString
   numero_residencia: 1
-  bloco: 1
+  bloco_residencia: 1
+  isMorador: false

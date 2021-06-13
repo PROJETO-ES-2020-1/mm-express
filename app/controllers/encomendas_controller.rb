@@ -64,6 +64,6 @@ class EncomendasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def encomenda_params
-      params.require(:encomenda).permit(:peso, :remetente, :Morador_id)
+      params.require(:encomenda).permit(:peso, :remetente, :usuario_id)
     end
 end

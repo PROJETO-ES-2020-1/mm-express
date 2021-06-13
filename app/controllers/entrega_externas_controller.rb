@@ -13,6 +13,7 @@ class EntregaExternasController < ApplicationController
   # GET /entrega_externas/new
   def new
     @entrega_externa = EntregaExterna.new
+    @entrega_externa.build_encomenda
   end
 
   # GET /entrega_externas/1/edit
@@ -64,6 +65,7 @@ class EntregaExternasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def entrega_externa_params
-      params.require(:entrega_externa).permit(:dataChegada, :horaChegada, :recebidoPor, :Encomenda_id)
+      params.require(:entrega_externa).permit(:dataChegada, :horaChegada, :recebidoPor, encomenda_attributes: [:peso, :remetente, :usuario_id])
     end
+  
 end
