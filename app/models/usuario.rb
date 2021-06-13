@@ -3,7 +3,7 @@ require "cpf_cnpj"
 class Usuario < ApplicationRecord
   has_many :encomenda, :dependent => :destroy
 
-  validates :nome, presence: true, length: { maximum: 70 }, format: /\w+ \w+/
+  validates :nome, presence: true, length: { maximum: 70 }, format: /\A\w+ +\w+\z/
 
   VALID_EMAIL_FORMAT = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates :email, presence: true, length: { maximum: 260 }, format: { with: VALID_EMAIL_FORMAT }, 

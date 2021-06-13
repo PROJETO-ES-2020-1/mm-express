@@ -11,6 +11,6 @@ class EntregaInterna < ApplicationRecord
 
   validates :entrega_externa, presence: true
 
-  validates :recebido_por, presence: true, length: { maximum: 70 }, format: /\w+ \w+/
+  validates :recebido_por, presence: true, length: { maximum: 70 }, format: /\A\w+ +\w+\z/
   
 end
