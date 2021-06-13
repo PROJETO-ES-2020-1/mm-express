@@ -7,7 +7,7 @@ class CreateUsuarios < ActiveRecord::Migration[6.1]
       t.string :cpf
       t.integer :numero_residencia
       t.integer :bloco_residencia
-      t.boolean :isMorador
+      t.boolean :isMorador, :default => true
 
       t.timestamps
     end

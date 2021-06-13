@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_041135) do
+ActiveRecord::Schema.define(version: 2021_06_13_031941) do
 
   create_table "encomendas", force: :cascade do |t|
     t.float "peso"
@@ -41,13 +41,14 @@ ActiveRecord::Schema.define(version: 2021_06_12_041135) do
     t.index ["entrega_externa_id"], name: "index_entrega_internas_on_entrega_externa_id"
   end
 
-  create_table "moradores", force: :cascade do |t|
+  create_table "usuarios", force: :cascade do |t|
     t.string "nome"
     t.string "email"
     t.string "telefone"
     t.string "cpf"
     t.integer "numero_residencia"
-    t.integer "bloco"
+    t.integer "bloco_residencia"
+    t.boolean "isMorador", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
