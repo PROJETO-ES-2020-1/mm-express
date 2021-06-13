@@ -11,6 +11,28 @@
     </div>
   <% end %>
 
+  <h3> Dados sobre a encomenda </h3>
+
+  <%= form.fields_for :encomenda do |encomenda_fields| %>
+  <div class="field">
+    <%= encomenda_fields.label :peso %>
+    <%= encomenda_fields.text_field :peso %>
+  </div>
+
+  <div class="field">
+    <%= encomenda_fields.label :remetente %>
+    <%= encomenda_fields.text_field :remetente %>
+  </div>
+
+  <div class="field">
+    <%= encomenda_fields.label :usuario_id %>
+    <%= encomenda_fields.text_field :usuario_id %>
+  </div>
+
+  <% end %>
+
+  <h3> Dados sobre a entrega </h3>
+
   <div class="field">
     <%= form.label :dataChegada %>
     <%= form.date_select :dataChegada %>
@@ -26,10 +48,7 @@
     <%= form.text_field :recebidoPor %>
   </div>
 
-  <div class="field">
-    <%= form.label :Encomenda_id %>
-    <%= form.text_field :Encomenda_id %>
-  </div>
+
 
   <div class="actions">
     <%= form.submit %>
