@@ -5,8 +5,6 @@ class CreateEntregaInternas < ActiveRecord::Migration[6.1]
       t.time :hora_recebida
       t.string :recebido_por
 
-      t.references :encomenda, null: false, foreign_key: true
-
       t.timestamps
     end
   end

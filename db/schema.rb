@@ -35,11 +35,9 @@ ActiveRecord::Schema.define(version: 2021_06_13_031941) do
     t.date "data_entrega"
     t.time "hora_recebida"
     t.string "recebido_por"
-    t.integer "encomenda_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "entrega_externa_id", null: false
-    t.index ["encomenda_id"], name: "index_entrega_internas_on_encomenda_id"
     t.index ["entrega_externa_id"], name: "index_entrega_internas_on_entrega_externa_id"
   end
 
@@ -57,6 +55,5 @@ ActiveRecord::Schema.define(version: 2021_06_13_031941) do
 
   add_foreign_key "encomendas", "entrega_externas"
   add_foreign_key "encomendas", "usuarios"
-  add_foreign_key "entrega_internas", "encomendas"
   add_foreign_key "entrega_internas", "entrega_externas"
 end

@@ -64,6 +64,6 @@ class EntregaInternasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def entrega_interna_params
-      params.require(:entrega_interna).permit(:data_entrega, :hora_recebida, :recebido_por)
+      params.require(:entrega_interna).permit(:data_entrega, :hora_recebida, :recebido_por, :entrega_externa_id)
     end
 end
