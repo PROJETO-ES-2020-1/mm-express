@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  email: MyString
+  telefone: MyString
+  cpf: MyString
+  numero_residencia: 1
+  bloco_residencia: 1
+  isMorador: false
+
+two:
+  nome: MyString
+  email: MyString
+  telefone: MyString
+  cpf: MyString
+  numero_residencia: 1
+  bloco_residencia: 1
+  isMorador: false
