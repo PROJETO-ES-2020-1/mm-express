@@ -25,9 +25,9 @@
   </div>
 
   <div class="field">
-    <%= encomenda_fields.label :usuario_id %>
-    <%= encomenda_fields.text_field :usuario_id %>
-  </div>
+  <%= encomenda_fields.label :Destinatário %><br>
+  <%= encomenda_fields.select(:usuario_id, Usuario.all.pluck(:nome, :id)) %>
+</div>
 
   <% end %>
 
