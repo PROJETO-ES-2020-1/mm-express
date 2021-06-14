@@ -19,7 +19,5 @@
 
 <h3>Usuário raiz</h3>
 
-```
-  email: administrador@fab.com.br
-  password: ADMINFAB
-```
+> email: administrador@fab.com.br<br>
+> password: ADMINFAB
