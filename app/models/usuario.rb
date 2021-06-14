@@ -3,6 +3,8 @@ require "cpf_cnpj"
 class Usuario < ApplicationRecord
   has_many :encomenda, :dependent => :destroy
 
+  has_secure_password
+
   validates :nome, presence: true, length: { maximum: 70 }, format: /\A\w+ +\w+\z/
 
   VALID_EMAIL_FORMAT = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
@@ -19,7 +21,8 @@ class Usuario < ApplicationRecord
 
   validates :bloco_residencia, presence: true , numericality: { only_integer: true, :greater_than_or_equal_to => 1 }, 
   format: { with: /\A\d+\z/, message: "Only numeric characteres are allowed in this field." }
-  
+
+  validates :password, presence: true, length: {minimum: 6}
 
   def valid_cpf?
     unless CPF.valid?(self.cpf)

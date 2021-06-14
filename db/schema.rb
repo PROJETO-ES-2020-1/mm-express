@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_13_031941) do
+ActiveRecord::Schema.define(version: 2021_06_14_040119) do
 
   create_table "encomendas", force: :cascade do |t|
     t.float "peso"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_06_13_031941) do
     t.boolean "isMorador", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
   add_foreign_key "encomendas", "entrega_externas"
