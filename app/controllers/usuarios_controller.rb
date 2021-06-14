@@ -1,4 +1,6 @@
 class UsuariosController < ApplicationController
+  before_action :authorize, except: [:new, :create]
+  before_action :correct_user?, only: [:edit, :update, :destroy]
   before_action :set_usuario, only: %i[ show edit update destroy ]
 
   # GET /usuarios or /usuarios.json
@@ -65,6 +67,6 @@ class UsuariosController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def usuario_params
-    params.require(:usuario).permit(:nome, :email, :telefone, :cpf, :numero_residencia, :bloco_residencia, :isMorador)
+    params.require(:usuario).permit(:nome, :email, :telefone, :cpf, :numero_residencia, :bloco_residencia, :isMorador, :password, :password_confirmation)
   end
 end

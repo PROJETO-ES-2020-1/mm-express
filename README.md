@@ -7,12 +7,17 @@
 <p  align="center"> MM Express é um sistema para gerenciamento das entregas internas para condomínios, com o objetivo de administrar o processo de recebimento e repasse das encomendas para os moradores, além de manter seu histórico para eventuais consultas. </p>
 
 <h3> Desenvolvedores: </h3>
-    <ul>
-      <li>[Glaudemir Leite](https://github.com/glaudemir)</li>
-      <li>[Joanne Silva](https://github.com/joannegabriela)</li>
-      <li>[Rafael Cavalcanti](https://github.com/mrafaelcavalcanti)</li>
-    </ul>
+    
+  [Glaudemir Leite](https://github.com/glaudemir)<br>
+  [Joanne Silva](https://github.com/joannegabriela)<br>
+  [Rafael Cavalcanti](https://github.com/mrafaelcavalcanti)<br>
+    
 
 <h3>Site no Heroku</h3>
 
 [MMExpress](https://mm-express.herokuapp.com/)
+
+<h3>Usuário raiz</h3>
+
+> email: administrador@fab.com.br<br>
+> password: ADMINFAB
