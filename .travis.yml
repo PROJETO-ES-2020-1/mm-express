@@ -18,6 +18,5 @@ script:
   - bundle exec rails test test/models/usuario_test.rb
   - bundle exec rails test test/models/entrega_interna_test.rb
 
-
 services:
   - postgresql
