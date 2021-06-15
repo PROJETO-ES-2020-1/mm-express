@@ -60,3 +60,4 @@ end
 Then("eu vejo que a entrega interna recebida por {string} foi excluida com sucesso") do |nome|
   expect(page).not_to have_content(nome)
 end
+
