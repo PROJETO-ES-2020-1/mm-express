@@ -37,7 +37,7 @@ class EntregaInternasController < ApplicationController
   # PATCH/PUT /entrega_internas/1 or /entrega_internas/1.json
   def update
     respond_to do |format|
-      if @entrega_interna.update(entrega_interna_params)
+      if @entrega_interna.update(entrega_interna_params_update)
         format.html { redirect_to @entrega_interna, notice: "Entrega interna was successfully updated." }
         format.json { render :show, status: :ok, location: @entrega_interna }
       else
@@ -57,13 +57,18 @@ class EntregaInternasController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_entrega_interna
-      @entrega_interna = EntregaInterna.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def entrega_interna_params
-      params.require(:entrega_interna).permit(:data_entrega, :hora_recebida, :recebido_por, :entrega_externa_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_entrega_interna
+    @entrega_interna = EntregaInterna.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def entrega_interna_params
+    params.require(:entrega_interna).permit(:data_entrega, :hora_recebida, :recebido_por, :entrega_externa_id)
+  end
+
+  def entrega_interna_params_update
+    params.require(:entrega_interna).permit(:data_entrega, :hora_recebida, :recebido_por)
+  end
 end
