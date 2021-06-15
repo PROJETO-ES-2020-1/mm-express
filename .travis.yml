@@ -17,7 +17,7 @@ script:
   - bundle exec rails webpacker:compile
   - bundle exec rails test test/models/usuario_test.rb
   - bundle exec rails test test/models/entrega_interna_test.rb
-
+  - bundle exec cucumber features/usuario.feature
 
 services:
   - postgresql
