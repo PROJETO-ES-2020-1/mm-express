@@ -61,6 +61,3 @@ Then("eu vejo que a entrega interna recebida por {string} foi excluida com suces
   expect(page).not_to have_content(nome)
 end
 
-Then('eu vejo uma mensagem informando que nao foi possivel realizar a operacao') do
-  assert_selector('div#error_explanation', text: '')
-end
