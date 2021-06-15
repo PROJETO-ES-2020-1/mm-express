@@ -4,8 +4,10 @@ one:
   data_entrega: 2021-06-11
   hora_recebida: 2021-06-11 01:42:18
   recebido_por: MyString
+  entrega_externa_id: 1
 
 two:
   data_entrega: 2021-06-11
   hora_recebida: 2021-06-11 01:42:18
   recebido_por: MyString
+  entrega_externa_id: 2

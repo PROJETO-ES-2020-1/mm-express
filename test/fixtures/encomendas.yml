@@ -3,9 +3,11 @@
 one:
   peso: 1.5
   remetente: MyString
-  Morador: one
+  usuario: one
+  entrega_externa: one
 
 two:
   peso: 1.5
   remetente: MyString
-  Morador: two
+  usuario: two
+  entrega_externa: two
