@@ -15,6 +15,9 @@ script:
   - bundle exec rake db:migrate RAILS_ENV=test
   - bundle exec rails db:seed
   - bundle exec rails webpacker:compile
+  - bundle exec rails test test/models/usuario_test.rb
+  - bundle exec rails test test/models/entrega_interna_test.rb
+
 
 services:
   - postgresql
