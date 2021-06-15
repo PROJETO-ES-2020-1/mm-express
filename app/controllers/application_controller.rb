@@ -8,11 +8,4 @@ class ApplicationController < ActionController::Base
       redirect_to root_url
     end
   end
-
-  def correct_user?
-    @usuario = Usuario.find(params[:id])
-    unless current_user == @usuario
-      redirect_to usuarios_path
-    end
-  end
 end
