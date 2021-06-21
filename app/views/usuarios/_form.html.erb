@@ -51,6 +51,11 @@
     <%= form.number_field :bloco_residencia %>
   </div>
 
+    <div class="field">
+    <%= form.label :Morador, "É um morador?" %>
+    <%= form.select :isMorador, ["Sim", "Nao"] %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

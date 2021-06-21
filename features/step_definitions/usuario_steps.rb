@@ -1,3 +1,20 @@
+Given("ha um usuario cadastrado com nome {string}, email {string}, telefone {string}, cpf {string}, numero da residencia {string}, bloco da residencia {string}, isMorador {string} password {string} e confirmacao de password {string}") do |nome, email, telefone, cpf, num_residencia, bloco_residencia, isMorador, password, password_confirmation|
+  visit "/usuarios/new"
+  expect(page).to have_current_path("/usuarios/new")
+
+  fill_in "usuario[nome]", :with => nome
+  fill_in "usuario[email]", :with => email
+  fill_in "usuario[telefone]", :with => telefone
+  fill_in "usuario[cpf]", :with => cpf
+  fill_in "usuario[numero_residencia]", :with => num_residencia.to_i
+  fill_in "usuario[bloco_residencia]", :with => bloco_residencia.to_i
+  fill_in "usuario[password]", :with => password
+  fill_in "usuario[password_confirmation]", :with => password_confirmation
+  select isMorador, :from => "usuario[isMorador]"
+
+  click_button "Create Usuario"
+  expect(page).not_to have_content("prohibited this usuario from being saved")
+end
 
 And("eu acesso a pagina de criacao de usuario") do
   visit "/usuarios/new"
@@ -18,7 +35,7 @@ When("clico no link para excluir o usuario que possui o email {string}") do |ema
   find("tr", text: email).click_link("Excluir")
 end
 
-When("preencho o nome {string}, email {string}, password {string}, password confimation {string},  telefone {string}, cpf: {string},  numero residencia: {string} e bloco_residencia: {string}") do |nome, email, password, passwordConfirmation, telefone, cpf, numero_residencia, bloco_residencia|
+When("preencho o nome {string}, email {string}, password {string}, password confimation {string},  telefone {string}, cpf: {string},  numero residencia: {string}, bloco_residencia: {string} e isMorador {string}") do |nome, email, password, passwordConfirmation, telefone, cpf, numero_residencia, bloco_residencia, isMorador|
   fill_in "usuario[nome]", :with => nome
   fill_in "usuario[email]", :with => email
   fill_in "usuario[password]", :with => password
@@ -27,6 +44,7 @@ When("preencho o nome {string}, email {string}, password {string}, password conf
   fill_in "usuario[cpf]", :with => cpf
   fill_in "usuario[numero_residencia]", :with => numero_residencia.to_i
   fill_in "usuario[bloco_residencia]", :with => bloco_residencia.to_i
+  select isMorador, :from => "usuario[isMorador]"
 end
 
 And("clico no botao para cadastro do usuario") do
@@ -50,6 +68,7 @@ Then("eu vejo que usuario que possui email {string} nao esta na lista de usuario
   expect(page).not_to have_content(email)
 end
 
-Then("eu vejo uma mensagem informando que nao foi possivel realizar a operacao") do
+Then("eu vejo uma mensagem informando que nao foi possivel criar o usuario") do
   assert_selector("div#error_explanation")
+  expect(page).to have_content("prohibited this usuario from being saved")
 end
