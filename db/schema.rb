@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< Updated upstream
 ActiveRecord::Schema.define(version: 2021_06_14_040119) do
-
-=======
-ActiveRecord::Schema.define(version: 2021_06_12_041135) do
->>>>>>> Stashed changes
   create_table "encomendas", force: :cascade do |t|
     t.float "peso"
     t.string "remetente"
@@ -58,12 +53,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_041135) do
     t.string "password_digest"
   end
 
-<<<<<<< Updated upstream
   add_foreign_key "encomendas", "entrega_externas"
   add_foreign_key "encomendas", "usuarios"
-=======
-  add_foreign_key "encomendas", "moradores"
-  add_foreign_key "entrega_externas", "encomendas"
->>>>>>> Stashed changes
   add_foreign_key "entrega_internas", "entrega_externas"
 end
