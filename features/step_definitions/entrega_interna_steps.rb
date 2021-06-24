@@ -1,6 +1,22 @@
-And("ha uma entrega externa cadastrada com data de chegada {string}, hora de chegada {string} e recebido por {string}, atrelada a uma encomenda de peso {string}, remetente {string}, e tendo como destinatario um morador cadastrado com nome {string}, email {string}, telefone {string}, cpf {string}, numero da residencia {string}, bloco da residencia {string}, isMorador {string} password {string} e confirmacao de password {string}") do |dataChegada, horaChegada, recebidoPor, peso, remetente, nome, email, telefone, cpf, num_residencia, bloco_residencia, isMorador, password, password_confirmation|
-  usuario = Usuario.create(nome: nome, email: email, telefone: telefone, cpf: cpf, numero_residencia: num_residencia.to_i, bloco_residencia: bloco_residencia.to_i, password: password, password_confirmation: password_confirmation, isMorador: isMorador.to_s.downcase == "true")
-  entrega = EntregaExterna.create(dataChegada: dataChegada.to_datetime, horaChegada: Time.parse(horaChegada), recebidoPor: recebidoPor, encomenda_attributes: { peso: peso.to_f, remetente: remetente, usuario_id: usuario.id })
+And("ha uma entrega externa cadastrada com data de chegada {string}, hora de chegada {string} e recebido por {string}, atrelada a uma encomenda de peso {string}, remetente {string}, e tendo como destinatario um morador cadastrado com nome {string}") do |data_chegada, hora_chegada, recebido_por, peso, remetente, nome_morador|
+  visit "/entrega_externas/new"
+  expect(page).to have_current_path("/entrega_externas/new")
+
+  fill_in "entrega_externa[encomenda_attributes][peso]", :with => peso
+  fill_in "entrega_externa[encomenda_attributes][remetente]", :with => remetente
+  select nome_morador, :from => "entrega_externa[encomenda_attributes][usuario_id]"
+
+  select data_chegada.split(" ")[0], :from => "entrega_externa_dataChegada_1i" # ano
+  select data_chegada.split(" ")[1], :from => "entrega_externa_dataChegada_2i" # mes
+  select data_chegada.split(" ")[2], :from => "entrega_externa_dataChegada_3i" # dia
+
+  select hora_chegada.split(":")[0], :from => "entrega_externa_horaChegada_4i"
+  select hora_chegada.split(":")[1], :from => "entrega_externa_horaChegada_5i"
+  fill_in "entrega_externa[recebidoPor]", :with => recebido_por
+
+  click_button "commit"
+
+  expect(page).to have_content("Entrega externa was successfully created")
 end
 
 And("eu acesso a pagina de listagem de encomendas") do
@@ -61,3 +77,7 @@ Then("eu vejo que a entrega interna recebida por {string} foi excluida com suces
   expect(page).not_to have_content(nome)
 end
 
+Then("eu vejo uma mensagem informando que nao foi possivel criar a entrega interna") do
+  assert_selector("div#error_explanation")
+  expect(page).to have_content("prohibited this entrega_interna from being saved")
+end

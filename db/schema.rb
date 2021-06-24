@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_06_14_040119) do
-
   create_table "encomendas", force: :cascade do |t|
     t.float "peso"
     t.string "remetente"
