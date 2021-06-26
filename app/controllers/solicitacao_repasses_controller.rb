@@ -1,5 +1,5 @@
 class SolicitacaoRepassesController < ApplicationController
-  before_action :set_solicitacao_repass, only: %i[ show edit update destroy ]
+  before_action :set_solicitacao_repasse, only: %i[ show edit update destroy ]
 
   # GET /solicitacao_repasses or /solicitacao_repasses.json
   def index
@@ -21,7 +21,7 @@ class SolicitacaoRepassesController < ApplicationController
 
   # POST /solicitacao_repasses or /solicitacao_repasses.json
   def create
-    @solicitacao_repass = SolicitacaoRepasse.new(solicitacao_repass_params)
+    @solicitacao_repass = SolicitacaoRepasse.new(solicitacao_repasse_params)
 
     respond_to do |format|
       if @solicitacao_repass.save
@@ -37,7 +37,7 @@ class SolicitacaoRepassesController < ApplicationController
   # PATCH/PUT /solicitacao_repasses/1 or /solicitacao_repasses/1.json
   def update
     respond_to do |format|
-      if @solicitacao_repass.update(solicitacao_repass_params)
+      if @solicitacao_repass.update(solicitacao_repasse_params)
         format.html { redirect_to @solicitacao_repass, notice: "Solicitacao repasse was successfully updated." }
         format.json { render :show, status: :ok, location: @solicitacao_repass }
       else
@@ -58,12 +58,12 @@ class SolicitacaoRepassesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_solicitacao_repass
+    def set_solicitacao_repasse
       @solicitacao_repass = SolicitacaoRepasse.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def solicitacao_repass_params
-      params.require(:solicitacao_repass).permit(:dataSolicitada, :entregaExterna_id)
+    def solicitacao_repasse_params
+      params.require(:solicitacao_repasse).permit(:dataSolicitada, :entrega_externa_id)
     end
 end

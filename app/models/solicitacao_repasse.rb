@@ -1,3 +1,3 @@
 class SolicitacaoRepasse < ApplicationRecord
-  belongs_to :entregaExterna
+  belongs_to :entrega_externa
 end
