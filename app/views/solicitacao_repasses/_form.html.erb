@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :entregaExterna_id %>
-    <%= form.text_field :entregaExterna_id %>
+    <%= form.label :entrega_externa_id %>
+    <%= form.select(:entrega_externa_id, EntregaExterna.all.pluck(:id)) %>
   </div>
 
   <div class="actions">
