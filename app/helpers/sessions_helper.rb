@@ -7,6 +7,10 @@ module SessionsHelper
     @current_user ||= Usuario.find_by(id: session[:usuario_id])
   end
 
+  def current_user_morador
+    current_user.isMorador
+  end
+
   def block_access
     if current_user.present?
       redirect_to usuarios_path
