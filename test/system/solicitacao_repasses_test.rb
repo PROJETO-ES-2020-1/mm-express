@@ -15,7 +15,7 @@ class SolicitacaoRepassesTest < ApplicationSystemTestCase
     click_on "New Solicitacao Repasse"
 
     fill_in "Datasolicitada", with: @solicitacao_repass.dataSolicitada
-    fill_in "Entregaexterna", with: @solicitacao_repass.entregaExterna_id
+    fill_in "Entregaexterna", with: @solicitacao_repass.entrega_externa_id
     click_on "Create Solicitacao repasse"
 
     assert_text "Solicitacao repasse was successfully created"
@@ -27,7 +27,7 @@ class SolicitacaoRepassesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Datasolicitada", with: @solicitacao_repass.dataSolicitada
-    fill_in "Entregaexterna", with: @solicitacao_repass.entregaExterna_id
+    fill_in "Entregaexterna", with: @solicitacao_repass.entrega_externa_id
     click_on "Update Solicitacao repasse"
 
     assert_text "Solicitacao repasse was successfully updated"

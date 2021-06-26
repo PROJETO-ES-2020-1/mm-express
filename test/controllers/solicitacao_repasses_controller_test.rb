@@ -17,7 +17,7 @@ class SolicitacaoRepassesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create solicitacao_repass" do
     assert_difference('SolicitacaoRepasse.count') do
-      post solicitacao_repasses_url, params: { solicitacao_repass: { dataSolicitada: @solicitacao_repass.dataSolicitada, entregaExterna_id: @solicitacao_repass.entregaExterna_id } }
+      post solicitacao_repasses_url, params: { solicitacao_repass: { dataSolicitada: @solicitacao_repass.dataSolicitada, entrega_externa_id: @solicitacao_repass.entrega_externa_id } }
     end
 
     assert_redirected_to solicitacao_repass_url(SolicitacaoRepasse.last)
@@ -34,7 +34,7 @@ class SolicitacaoRepassesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update solicitacao_repass" do
-    patch solicitacao_repass_url(@solicitacao_repass), params: { solicitacao_repass: { dataSolicitada: @solicitacao_repass.dataSolicitada, entregaExterna_id: @solicitacao_repass.entregaExterna_id } }
+    patch solicitacao_repass_url(@solicitacao_repass), params: { solicitacao_repass: { dataSolicitada: @solicitacao_repass.dataSolicitada, entregaExterna_id: @solicitacao_repass.entrega_externa_id } }
     assert_redirected_to solicitacao_repass_url(@solicitacao_repass)
   end
 
