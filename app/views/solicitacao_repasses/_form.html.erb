@@ -1,0 +1,27 @@
+<%= form_with(model: solicitacao_repass) do |form| %>
+  <% if solicitacao_repass.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(solicitacao_repass.errors.count, "error") %> prohibited this solicitacao_repass from being saved:</h2>
+
+      <ul>
+        <% solicitacao_repass.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dataSolicitada %>
+    <%= form.text_field :dataSolicitada %>
+  </div>
+
+  <div class="field">
+    <%= form.label :entregaExterna_id %>
+    <%= form.text_field :entregaExterna_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

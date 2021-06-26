@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_14_040119) do
+ActiveRecord::Schema.define(version: 2021_06_26_182728) do
+
   create_table "encomendas", force: :cascade do |t|
     t.float "peso"
     t.string "remetente"
@@ -40,6 +41,14 @@ ActiveRecord::Schema.define(version: 2021_06_14_040119) do
     t.index ["entrega_externa_id"], name: "index_entrega_internas_on_entrega_externa_id"
   end
 
+  create_table "solicitacao_repasses", force: :cascade do |t|
+    t.date "dataSolicitada"
+    t.integer "entrega_externa_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["entrega_externa_id"], name: "index_solicitacao_repasses_on_entrega_externa_id"
+  end
+
   create_table "usuarios", force: :cascade do |t|
     t.string "nome"
     t.string "email"
@@ -56,4 +65,5 @@ ActiveRecord::Schema.define(version: 2021_06_14_040119) do
   add_foreign_key "encomendas", "entrega_externas"
   add_foreign_key "encomendas", "usuarios"
   add_foreign_key "entrega_internas", "entrega_externas"
+  add_foreign_key "solicitacao_repasses", "entrega_externas"
 end
