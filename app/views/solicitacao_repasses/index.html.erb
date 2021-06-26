@@ -15,7 +15,7 @@
     <% @solicitacao_repasses.each do |solicitacao_repass| %>
       <tr>
         <td><%= solicitacao_repass.dataSolicitada %></td>
-        <td><%= solicitacao_repass.entregaExterna_id %></td>
+        <td><%= solicitacao_repass.entrega_externa_id %></td>
         <td><%= link_to 'Show', solicitacao_repass %></td>
         <td><%= link_to 'Edit', edit_solicitacao_repass_path(solicitacao_repass) %></td>
         <td><%= link_to 'Destroy', solicitacao_repass, method: :delete, data: { confirm: 'Are you sure?' } %></td>
