@@ -3,7 +3,7 @@ And("estou logado no sistema com um usuario que possui email {string} e senha {s
   fill_in "session[email]", :with => email
   fill_in "session[password]", :with => senha
   click_button "Log in"
-  expect(page).to have_content("administrador@fab.com.br")
+  expect(page).to have_content(email)
 end
 
 And("acesso a pagina de criacao de nova entrega externa") do
