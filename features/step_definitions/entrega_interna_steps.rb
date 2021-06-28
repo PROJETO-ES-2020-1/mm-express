@@ -1,5 +1,5 @@
 And("ha uma adm") do
-  usuario = Usuario.create(nome: "administrador FAB", email: "administrador@fab.com.br", password: "ADMINFAB", telefone: "99999999", cpf: "237.713.510-22", numero_residencia: 1, bloco_residencia: 1, isMorador: false)
+  Usuario.create(nome: "administrador FAB", email: "administrador@fab.com.br", password: "ADMINFAB", telefone: "99999999", cpf: "237.713.510-22", numero_residencia: 1, bloco_residencia: 1, isMorador: false)
 end
 
 And("ha uma entrega externa cadastrada com data de chegada {string}, hora de chegada {string} e recebido por {string}, atrelada a uma encomenda de peso {string}, remetente {string}, e tendo como destinatario um morador cadastrado com nome {string}") do |data_chegada, hora_chegada, recebido_por, peso, remetente, nome_morador|
