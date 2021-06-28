@@ -9,6 +9,7 @@
       <th>Remetente</th>
       <th>Morador</th>
       <th>Data de chegada</th>
+      <th>Recebido por</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,16 +21,19 @@
         <td><%= encomenda.remetente %></td>
         <td><%= encomenda.usuario.try(:nome) %> </td>
         <td><%= encomenda.entrega_externa.try(:dataChegada) %></td>
+        <td><%= encomenda.entrega_externa.try(:recebidoPor) %></td>
 
-        <td><%= link_to 'Show', encomenda %></td>
-        <td><%= link_to 'Marcar como entregue', new_entrega_interna_path(:entrega_externa_id => encomenda.entrega_externa.try(:id))  %></td>
-        <td><%= link_to 'Edit', edit_entrega_externa_path(encomenda) %></td>
-        <td><%= link_to 'Destroy', encomenda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Visualizar", encomenda %></td>
+
+        <% if !current_user_morador() %>
+          <td><%= link_to "Marcar como entregue", new_entrega_interna_path(:entrega_externa_id => encomenda.entrega_externa.try(:id)) %></td>
+          <td><%= link_to "Editar", edit_entrega_externa_path(encomenda) %></td>
+          <td><%= link_to "Deletar", encomenda, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <% end %>
+        
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Encomenda', new_encomenda_path %>

@@ -3,7 +3,11 @@ class EncomendasController < ApplicationController
 
   # GET /encomendas or /encomendas.json
   def index
-    @encomendas = Encomenda.all
+    if !current_user_morador()
+      @encomendas = Encomenda.all
+    else
+      @encomendas = Encomenda.where("usuario_id = ?", current_user)
+    end
   end
 
   # GET /encomendas/1 or /encomendas/1.json
@@ -57,13 +61,14 @@ class EncomendasController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_encomenda
-      @encomenda = Encomenda.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def encomenda_params
-      params.require(:encomenda).permit(:peso, :remetente, :usuario_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_encomenda
+    @encomenda = Encomenda.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def encomenda_params
+    params.require(:encomenda).permit(:peso, :remetente, :usuario_id)
+  end
 end
