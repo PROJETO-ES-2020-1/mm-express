@@ -4,7 +4,7 @@ Feature: EntregaInterna
     So that eu possa gerenciar as informacoes sobre entregas internas destinadas aos morador
 
     Scenario:  criar nova entrega interna
-        Given ha uma adm
+        Given ha um usuario do tipo funcionario cadastrado com nome "administrador FAB", email "administrador@fab.com.br", password "ADMINFAB", telefone '98654123', cpf '237.713.510-22', numero_residencia '1', bloco_residencia '1'
         And estou logado no sistema com um usuario que possui email 'administrador@fab.com.br' e senha 'ADMINFAB'
         And ha um usuario cadastrado com nome 'Eleanor Walker', email 'eleanor@gmail.com', telefone '89653210', cpf '938.431.650-41', numero da residencia '5', bloco da residencia '2', isMorador 'Sim' password 'eleanorpassword' e confirmacao de password 'eleanorpassword'
         And ha uma entrega externa cadastrada com data de chegada '2021 June 9', hora de chegada '14:00' e recebido por 'Eleanor Walker', atrelada a uma encomenda de peso '5.0', remetente 'Ellen Roberts', e tendo como destinatario um morador cadastrado com nome 'Eleanor Walker'
@@ -15,7 +15,7 @@ Feature: EntregaInterna
         Then vejo uma mensagem de confirmacao de criacao da entrega interna
 
     Scenario:  editar dados de um usuario cadastrado
-        Given ha uma adm
+        Given ha um usuario do tipo funcionario cadastrado com nome "administrador FAB", email "administrador@fab.com.br", password "ADMINFAB", telefone '98654123', cpf '237.713.510-22', numero_residencia '1', bloco_residencia '1'
         And estou logado no sistema com um usuario que possui email 'administrador@fab.com.br' e senha 'ADMINFAB'
         And ha um usuario cadastrado com nome 'Eleanor Walker', email 'eleanor@gmail.com', telefone '89653210', cpf '938.431.650-41', numero da residencia '5', bloco da residencia '2', isMorador 'Sim' password 'eleanorpassword' e confirmacao de password 'eleanorpassword'
         And eu acesso a pagina que lista todos os usuarios cadastrados
@@ -25,7 +25,7 @@ Feature: EntregaInterna
         Then eu vejo que usuario que possui email "eleanor@gmail.com" foi editado com sucesso
 
     Scenario:  deletar um usuario cadastrado
-        Given ha uma adm
+        Given ha um usuario do tipo funcionario cadastrado com nome "administrador FAB", email "administrador@fab.com.br", password "ADMINFAB", telefone '98654123', cpf '237.713.510-22', numero_residencia '1', bloco_residencia '1'
         And estou logado no sistema com um usuario que possui email 'administrador@fab.com.br' e senha 'ADMINFAB'
         And ha um usuario cadastrado com nome 'Eleanor Lince', email 'eleanor@gmail.com', telefone '89653210', cpf '358.941.590-83', numero da residencia '4', bloco da residencia '9', isMorador 'Sim' password 'eleanorpassword' e confirmacao de password 'eleanorpassword'
         When eu acesso a pagina que lista todos os usuarios cadastrados
@@ -33,7 +33,7 @@ Feature: EntregaInterna
         Then eu vejo que usuario que possui email "eleanor@gmail.com" nao esta na lista de usuarios cadastrados
 
     Scenario:  criar novo usuario com o campo de cpf invalido
-        Given ha uma adm
+        Given ha um usuario do tipo funcionario cadastrado com nome "administrador FAB", email "administrador@fab.com.br", password "ADMINFAB", telefone '98654123', cpf '237.713.510-22', numero_residencia '1', bloco_residencia '1'
         And estou logado no sistema com um usuario que possui email 'administrador@fab.com.br' e senha 'ADMINFAB'
         And eu acesso a pagina de criacao de usuario
         When preencho o nome 'Eleanor Lince', email "eleanor@gmail.com", password "eleanorpassword", password confimation "eleanorpassword",  telefone "89653210", cpf: '123.456.789-10',  numero residencia: '4', bloco_residencia: '9' e isMorador "Sim"
@@ -41,7 +41,7 @@ Feature: EntregaInterna
         Then eu vejo uma mensagem informando que nao foi possivel criar o usuario
 
     Scenario:  criar um usuario com um email ja cadastrado
-        Given ha uma adm
+        Given ha um usuario do tipo funcionario cadastrado com nome "administrador FAB", email "administrador@fab.com.br", password "ADMINFAB", telefone '98654123', cpf '237.713.510-22', numero_residencia '1', bloco_residencia '1'
         And estou logado no sistema com um usuario que possui email 'administrador@fab.com.br' e senha 'ADMINFAB'
         And ha um usuario cadastrado com nome 'Eleanor Walker', email 'elle@gmail.com', telefone '89653210', cpf '938.431.650-41', numero da residencia '5', bloco da residencia '2', isMorador 'Sim' password 'eleanorpassword' e confirmacao de password 'eleanorpassword'
         And eu acesso a pagina de criacao de usuario

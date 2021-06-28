@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data prevista entrega:</strong>
+  <%= @sobreaviso_de_entrega.data_prevista_entrega %>
+</p>
+
+<p>
+  <strong>Urgencia de repasse:</strong>
+  <%= @sobreaviso_de_entrega.urgencia_de_repasse %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @sobreaviso_de_entrega.usuario_id %>
+</p>
+
+<%= link_to 'Edit', edit_sobreaviso_de_entrega_path(@sobreaviso_de_entrega) %> |
+<%= link_to 'Back', sobreaviso_de_entregas_path %>

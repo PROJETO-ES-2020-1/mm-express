@@ -1,3 +1,7 @@
+Given("ha um usuario do tipo funcionario cadastrado com nome {string}, email {string}, password {string}, telefone {string}, cpf {string}, numero_residencia {string}, bloco_residencia {string}") do |nome, email, senha, telefone, cpf, num_residencia, bloco_residencia|
+  Usuario.create(nome: nome, email: email, password: senha, telefone: telefone, cpf: cpf, numero_residencia: num_residencia.to_i, bloco_residencia: bloco_residencia.to_i, isMorador: false)
+end
+
 Given("ha um usuario cadastrado com nome {string}, email {string}, telefone {string}, cpf {string}, numero da residencia {string}, bloco da residencia {string}, isMorador {string} password {string} e confirmacao de password {string}") do |nome, email, telefone, cpf, num_residencia, bloco_residencia, isMorador, password, password_confirmation|
   visit "/usuarios/new"
   expect(page).to have_current_path("/usuarios/new")

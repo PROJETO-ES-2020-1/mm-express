@@ -5,7 +5,11 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios or /usuarios.json
   def index
-    @usuarios = Usuario.all
+    if !current_user_morador()
+      @usuarios = Usuario.all
+    else
+      @usuarios = Usuario.where("id = ?", current_user.id)
+    end
   end
 
   # GET /usuarios/1 or /usuarios/1.json
