@@ -1,3 +1,7 @@
+And("ha uma adm") do
+  Usuario.create(nome: "administrador FAB", email: "administrador@fab.com.br", password: "ADMINFAB", telefone: "99999999", cpf: "237.713.510-22", numero_residencia: 1, bloco_residencia: 1, isMorador: false)
+end
+
 And("ha uma entrega externa cadastrada com data de chegada {string}, hora de chegada {string} e recebido por {string}, atrelada a uma encomenda de peso {string}, remetente {string}, e tendo como destinatario um morador cadastrado com nome {string}") do |data_chegada, hora_chegada, recebido_por, peso, remetente, nome_morador|
   visit "/entrega_externas/new"
   expect(page).to have_current_path("/entrega_externas/new")
@@ -75,9 +79,4 @@ end
 
 Then("eu vejo que a entrega interna recebida por {string} foi excluida com sucesso") do |nome|
   expect(page).not_to have_content(nome)
-end
-
-Then("eu vejo uma mensagem informando que nao foi possivel criar a entrega interna") do
-  assert_selector("div#error_explanation")
-  expect(page).to have_content("prohibited this entrega_interna from being saved")
 end

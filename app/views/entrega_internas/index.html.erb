@@ -19,9 +19,9 @@
         <td><%= entrega_interna.hora_recebida %></td>
         <td><%= entrega_interna.recebido_por %></td>
         <td><%= entrega_interna.recebido_por %></td>
-        <td><%= link_to 'Show', entrega_interna %></td>
-        <td><%= link_to 'Edit', edit_entrega_interna_path(entrega_interna) %></td>
-        <td><%= link_to 'Destroy', entrega_interna, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Show", entrega_interna %></td>
+        <td><%= link_to "Edit", edit_entrega_interna_path(entrega_interna) %></td>
+        <td><%= link_to "Destroy", entrega_interna, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Entrega Interna', new_entrega_interna_path %>
+<%= link_to "New Entrega Interna", new_entrega_interna_path %>

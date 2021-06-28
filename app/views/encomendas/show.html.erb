@@ -15,5 +15,23 @@
   <%= @encomenda.usuario_id %>
 </p>
 
-<%= link_to 'Edit', edit_encomenda_path(@encomenda) %> |
-<%= link_to 'Back', encomendas_path %>
+<p>
+  <strong>Data de chegada:</strong>
+  <%= @encomenda.entrega_externa.dataChegada %>
+</p>
+
+<p>
+  <strong>Hora de chegada:</strong>
+  <%= @encomenda.entrega_externa.horaChegada %>
+</p>
+
+<p>
+  <strong>Recebido por:</strong>
+  <%= @encomenda.entrega_externa.recebidoPor %>
+</p>
+
+<% if !current_user_morador() %>
+  <%= link_to "Editar", edit_encomenda_path(@encomenda) %> |
+<% end %>
+
+<%= link_to "Voltar", encomendas_path %>
