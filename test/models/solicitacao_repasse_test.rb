@@ -17,7 +17,7 @@ class SolicitacaoRepasseTest < ActiveSupport::TestCase
 
     assert entregaExterna.save
 
-    solicitacaoRepasse = SolicitacaoRepasse.new(dataSolicitada: Date.today, entrega_externa_id: entregaExterna.id)
+    solicitacaoRepasse = SolicitacaoRepasse.new(dataSolicitada: Time.zone.today, entrega_externa_id: entregaExterna.id)
     assert solicitacaoRepasse.save
   end
 
@@ -45,7 +45,7 @@ class SolicitacaoRepasseTest < ActiveSupport::TestCase
 
     assert entregaExterna.save
 
-    solicitacaoRepasse = SolicitacaoRepasse.new(dataSolicitada: Date.today)
+    solicitacaoRepasse = SolicitacaoRepasse.new(dataSolicitada: Time.zone.today)
     assert_not solicitacaoRepasse.save
   end
 
