@@ -23,6 +23,7 @@ script:
   - bundle exec cucumber features/entrega_externa.feature
   - bundle exec cucumber features/entrega_interna.feature
   - bundle exec cucumber features/usuario.feature
+  - bundle exec cucumber features/sobreaviso_de_entrega.feature
 
 services:
   - postgresql
