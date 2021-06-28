@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Datasolicitada:</strong>
+  <%= @solicitacao_repass.dataSolicitada %>
+</p>
+
+<p>
+  <strong>Entregaexterna:</strong>
+  <%= @solicitacao_repass.entrega_externa_id %>
+</p>
+
+<%= link_to 'Edit', edit_solicitacao_repass_path(@solicitacao_repass) %> |
+<%= link_to 'Back', solicitacao_repasses_path %>
