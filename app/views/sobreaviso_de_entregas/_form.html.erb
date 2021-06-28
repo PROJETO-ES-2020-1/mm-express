@@ -1,0 +1,27 @@
+<%= form_with(model: sobreaviso_de_entrega) do |form| %>
+  <% if sobreaviso_de_entrega.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sobreaviso_de_entrega.errors.count, "error") %> prohibited this sobreaviso_de_entrega from being saved:</h2>
+
+      <ul>
+        <% sobreaviso_de_entrega.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data_prevista_entrega %>
+    <%= form.date_select :data_prevista_entrega %>
+  </div>
+
+    <div class="field">
+    <%= form.label :Nível_de_urgência_de_repasse %>
+    <%= form.select :urgencia_de_repasse, options_for_select([:Baixa, :Alta]) %>
+  </div> <br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
