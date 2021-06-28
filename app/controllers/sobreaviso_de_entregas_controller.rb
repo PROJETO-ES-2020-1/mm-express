@@ -65,7 +65,7 @@ class SobreavisoDeEntregasController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_sobreaviso_de_entrega
-    @sobreaviso_de_entrega = SobreavisoDeEntrega.find(params[:id])
+    @sobreaviso_de_entrega = current_user.sobreaviso_de_entregas.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
