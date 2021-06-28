@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :solicitacao_repasses
+  resources :sobreaviso_de_entregas
   get "sessions/new"
   resources :usuarios
   resources :entrega_internas
