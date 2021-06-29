@@ -1,5 +1,6 @@
 class EntregaExternasController < ApplicationController
   before_action :set_entrega_externa, only: %i[ show edit update destroy ]
+  before_action :authorize
 
   # GET /entrega_externas or /entrega_externas.json
   def index
@@ -58,14 +59,14 @@ class EntregaExternasController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_entrega_externa
-      @entrega_externa = EntregaExterna.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def entrega_externa_params
-      params.require(:entrega_externa).permit(:dataChegada, :horaChegada, :recebidoPor, encomenda_attributes: [:peso, :remetente, :usuario_id])
-    end
-  
+  # Use callbacks to share common setup or constraints between actions.
+  def set_entrega_externa
+    @entrega_externa = EntregaExterna.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def entrega_externa_params
+    params.require(:entrega_externa).permit(:dataChegada, :horaChegada, :recebidoPor, encomenda_attributes: [:peso, :remetente, :usuario_id])
+  end
 end

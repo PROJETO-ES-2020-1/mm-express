@@ -3,18 +3,39 @@
     <nav>
       <ul>
         <% if logged_in? %>
-          <li><%= link_to "Usuarios", usuarios_path %></li>
-          <li>
-            <ul>
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", "#" %></li>
-              <li>
-                <%= link_to "Log out", sign_out_path, method: "delete" %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Log in", root_path %></li>
+          <li><%= link_to "Conta", "/usuarios/#{current_user.id}" %></li>
+            <li>
+              <ul>
+                <li><%= link_to "Editar dados da conta", "usuarios/#{current_user.id}/edit" %></li>
+              </ul>
+            </li>
+          <li><%= link_to "Encomendas", "/encomendas" %></li>
+          <% if !current_user_morador %>
+            <li>
+              <ul>
+              <li><%= link_to "Criar", "/entrega_externas/new" %></li> 
+              </ul>
+            </li>
+          <% end %>
+          <li><%= link_to "Entregas internas", "/entrega_internas" %></li>
+          <li><%= link_to "Solicitações de repasse", "/solicitacao_repasses" %></li>
+          <% if current_user_morador %>
+            <li>
+              <ul>
+                <li><%= link_to "Criar", "/solicitacao_repasses/new" %></li>
+              </ul>
+            </li>
+          <% end %>
+          <li><%= link_to "Sobreaviso de entregas", "/sobreaviso_de_entregas" %></li>
+          <% if current_user_morador %>
+            <li>
+              <ul>
+                <li><%= link_to "Criar", "/sobreaviso_de_entregas/new" %></li>
+              </ul>
+            </li>
+            <% end %>
+          <br>
+          <%= link_to "Log out", sign_out_path, method: "delete" %>
         <% end %>
       </ul>
     </nav>

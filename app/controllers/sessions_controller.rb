@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
       sign_in(@usuario)
 
       if current_user_morador()
-        redirect_to @usuario
+        redirect_to encomendas_path
       else
-        redirect_to usuarios_path
+        redirect_to encomendas_path
       end
     else
       render "new"

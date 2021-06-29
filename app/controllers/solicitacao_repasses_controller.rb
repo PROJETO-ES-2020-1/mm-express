@@ -1,5 +1,6 @@
 class SolicitacaoRepassesController < ApplicationController
   before_action :set_solicitacao_repasse, only: %i[ show edit update destroy ]
+  before_action :authorize
 
   # GET /solicitacao_repasses or /solicitacao_repasses.json
   def index
@@ -57,13 +58,14 @@ class SolicitacaoRepassesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_solicitacao_repasse
-      @solicitacao_repass = SolicitacaoRepasse.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def solicitacao_repasse_params
-      params.require(:solicitacao_repasse).permit(:dataSolicitada, :entrega_externa_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_solicitacao_repasse
+    @solicitacao_repass = SolicitacaoRepasse.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def solicitacao_repasse_params
+    params.require(:solicitacao_repasse).permit(:dataSolicitada, :entrega_externa_id)
+  end
 end

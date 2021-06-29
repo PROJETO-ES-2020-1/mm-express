@@ -1,5 +1,8 @@
 class EncomendasController < ApplicationController
+  before_action :current_user_morador
   before_action :set_encomenda, only: %i[ show edit update destroy ]
+  before_action :correct_user?, only: [:destroy, :show]
+  before_action :authorize
 
   # GET /encomendas or /encomendas.json
   def index
