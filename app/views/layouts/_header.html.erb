@@ -8,6 +8,9 @@
               <ul>
                 <li><%= link_to "Editar dados da conta", "/usuarios/#{current_user.id}/edit" %></li>
               </ul>
+              <ul>
+                <li><%= link_to "Contas", "/usuarios" %></li>
+              </ul>
             </li>
           <li><%= link_to "Encomendas", "/encomendas" %></li>
           <% if !current_user_morador %>
