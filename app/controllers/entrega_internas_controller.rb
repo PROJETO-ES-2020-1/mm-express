@@ -7,7 +7,7 @@ class EntregaInternasController < ApplicationController
       @entrega_internas = EntregaInterna.all
     else
       @entrega_internas = EntregaInterna.joins("INNER JOIN encomendas ON 
-        encomendas.entrega_externa_id = entrega_internas.entre/ga_externa_id AND 
+        encomendas.entrega_externa_id = entrega_internas.entrega_externa_id AND 
         encomendas.usuario_id = " + current_user.id.to_s)
     end
   end
