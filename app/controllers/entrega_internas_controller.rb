@@ -1,5 +1,6 @@
 class EntregaInternasController < ApplicationController
   before_action :set_entrega_interna, only: %i[ show edit update destroy ]
+  before_action :authorize
 
   # GET /entrega_internas or /entrega_internas.json
   def index

@@ -1,5 +1,6 @@
 class SobreavisoDeEntregasController < ApplicationController
   before_action :set_sobreaviso_de_entrega, only: %i[ show edit update destroy ]
+  before_action :authorize
 
   # GET /sobreaviso_de_entregas or /sobreaviso_de_entregas.json
   def index
