@@ -16,9 +16,6 @@
   <strong>Recebido por:</strong>
   <%= @entrega_interna.recebido_por %>
 </p>
-</div>
-<div>
-<%= link_to 'Edit', edit_entrega_interna_path(@entrega_interna) %> |
-<%= link_to 'Back', entrega_internas_path %>
-</div>
-</body>
+
+<%= link_to "Editar", edit_entrega_interna_path(@entrega_interna) %> |
+<%= link_to "Voltar", entrega_internas_path %>
