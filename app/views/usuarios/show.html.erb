@@ -32,15 +32,5 @@
   <%= @usuario.bloco_residencia %>
 </p>
 
-<p>
-  <strong>Ismorador:</strong>
-  <%= @usuario.isMorador %>
-</p>
-</div>
-
-<div>
-<%= link_to 'Edit', edit_usuario_path(@usuario) %> |
-<%= link_to 'Back', usuarios_path %>
-</div>
-
-</body>
+<%= link_to "Editar", edit_usuario_path(@usuario) %> |
+<%= link_to "Voltar", usuarios_path %>

@@ -62,7 +62,7 @@ end
 
 And ("clico no link para editar o sobreaviso que tem data prevista de entrega {string} e urgencia de repasse {string}") do |dataPrevistaChegada, urgenciaRepasse|
   find("tr", text: dataPrevistaChegada, text: urgenciaRepasse).click_link("Edit")
-  expect(page).to have_content("Editing Sobreaviso De Entrega")
+  expect(page).to have_content("Edição de sobreaviso de entrega")
 end
 
 And ("eu acesso a pagina de listagem dos meus sobreavisos de entrega de encomendas") do
@@ -79,7 +79,7 @@ Then ("vejo uma mensagem de confirmacao de edicao de sobreaviso de entrega de en
 end
 
 And("clico no link para deletar o sobreaviso que tem data prevista de entrega {string} e urgencia de repasse {string}") do |dataPrevistaChegada, urgenciaRepasse|
-  find("tr", text: dataPrevistaChegada, text: urgenciaRepasse).click_link("Destroy")
+  find("tr", text: dataPrevistaChegada, text: urgenciaRepasse).click_link("Deletar")
 end
 
 Then ("vejo que o sobreaviso que tem data prevista de entrega {string} e urgencia de repasse {string} ja nao esta na pagina de listagem de sobreavisos de chegada de encomendas") do |dataPrevistaChegada, urgenciaRepasse|

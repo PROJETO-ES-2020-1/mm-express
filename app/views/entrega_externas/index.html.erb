@@ -17,13 +17,13 @@
   <tbody>
     <% @entrega_externas.each do |entrega_externa| %>
       <tr>
-        <td class="td"><%= entrega_externa.dataChegada %></td>
-        <td class="td"><%= entrega_externa.horaChegada %></td>
-        <td class="td"><%= entrega_externa.recebidoPor %></td>
-        <td class="td"><%= link_to 'Visualizar', entrega_externa %></td>
-        <td class="td"><%= link_to 'Editar', edit_entrega_externa_path(entrega_externa) %></td>
-        <td class="td"><%= link_to 'Marcar como entregue', new_entrega_interna_path(:entrega_externa_id => entrega_externa.id)  %></td>
-        <td class="td"><%= link_to 'Excluir', entrega_externa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= entrega_externa.dataChegada %></td>
+        <td><%= entrega_externa.horaChegada %></td>
+        <td><%= entrega_externa.recebidoPor %></td>
+        <td><%= link_to "Visualizar", entrega_externa %></td>
+        <td><%= link_to "Editar", edit_entrega_externa_path(entrega_externa) %></td>
+        <td><%= link_to "Marcar como entregue", new_entrega_interna_path(:entrega_externa_id => entrega_externa.id) %></td>
+        <td><%= link_to "Excluir", entrega_externa, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,5 +31,4 @@
 
 <br>
 
-<%= link_to 'New Entrega Externa', new_entrega_externa_path %>
-</body>
+<%= link_to "Cadastrar entrega externa", new_entrega_externa_path %>

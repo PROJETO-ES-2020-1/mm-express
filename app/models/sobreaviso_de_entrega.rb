@@ -3,7 +3,8 @@ require "validates_timeliness"
 class SobreavisoDeEntrega < ApplicationRecord
   belongs_to :usuario
 
-  validates_date :data_prevista_entrega, :between => [Date.tomorrow, 3.months.after], before_message: "is invalid"
+  validates_date :data_prevista_entrega, :between => [Date.tomorrow, 3.months.after]
+
   enum urgencia_de_repasse: [:Baixa, :Alta]
 
   validates :usuario, presence: true

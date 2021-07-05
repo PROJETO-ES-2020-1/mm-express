@@ -18,10 +18,10 @@ class Usuario < ApplicationRecord
   validate :valid_cpf?
 
   validates :numero_residencia, presence: true, numericality: { only_integer: true, :greater_than_or_equal_to => 1 },
-                                format: { with: /\A\d+\z/, message: "Only numeric characteres are allowed in this field." }
+                                format: { with: /\A\d+\z/, message: "Apenas carcteres numéricos são aceitos nesse campo." }
 
   validates :bloco_residencia, presence: true, numericality: { only_integer: true, :greater_than_or_equal_to => 1 },
-                               format: { with: /\A\d+\z/, message: "Only numeric characteres are allowed in this field." }
+                               format: { with: /\A\d+\z/, message: "Apenas carcteres numéricos são aceitos nesse campo." }
 
   validates :password, presence: true, length: { minimum: 6 }
 
