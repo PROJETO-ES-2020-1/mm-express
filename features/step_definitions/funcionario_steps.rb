@@ -22,7 +22,7 @@ end
 
 And("eu acesso a pagina de criacao de usuario") do
   visit "/usuarios/new"
-  expect(page).to have_content("New Usuario")
+  expect(page).to have_content("Cadastrar usuario")
 end
 
 And("eu acesso a pagina que lista todos os usuarios cadastrados") do

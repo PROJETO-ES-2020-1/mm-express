@@ -33,7 +33,7 @@ Scenario: criar um novo sobreaviso de encomendas com data anterior a atual
     Given ha um usuario de nome 'Eleanor Walker', email "eleanor@gmail.com", password "eleanorpassword", password confimation "eleanorpassword",  telefone "89653210", cpf: '938.431.650-41',  numero residencia: '5', bloco_residencia: '2' e isMorador "Sim" cadastrado por um funcionario
     And estou logado no sistema com um usuario que possui email 'eleanor@gmail.com' e senha 'eleanorpassword'
     When eu acesso a pagina de criacao de sobreavisos de entrega de encomendas
-    And eu preencho a data prevista para chegada com '2020 July 3' e urgencia de repasse 'Baixa'
+    And eu preencho a data prevista para chegada com '2020 August 3' e urgencia de repasse 'Baixa'
     And clico no botao de criacao de um sobreaviso de entrega de encomenda
     Then vejo uma mensagem informando que nao foi possivel criar o sobreaviso de chegada de encomendas
 
@@ -41,7 +41,7 @@ Scenario: criar um novo sobreaviso de encomendas com data futura invalida
     Given ha um usuario de nome 'Eleanor Walker', email "eleanor@gmail.com", password "eleanorpassword", password confimation "eleanorpassword",  telefone "89653210", cpf: '938.431.650-41',  numero residencia: '5', bloco_residencia: '2' e isMorador "Sim" cadastrado por um funcionario
     And estou logado no sistema com um usuario que possui email 'eleanor@gmail.com' e senha 'eleanorpassword'
     When eu acesso a pagina de criacao de sobreavisos de entrega de encomendas
-    And eu preencho a data prevista para chegada com '2022 July 3' e urgencia de repasse 'Baixa'
+    And eu preencho a data prevista para chegada com '2022 August 3' e urgencia de repasse 'Baixa'
     And clico no botao de criacao de um sobreaviso de entrega de encomenda
     Then vejo uma mensagem informando que nao foi possivel criar o sobreaviso de chegada de encomendas
 
