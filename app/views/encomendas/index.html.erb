@@ -28,7 +28,7 @@
 
         <td class="td"><%= link_to "Visualizar", encomenda %></td>
 
-        <% if !current_user_morador() %>
+        <% if !current_user_morador?() %>
           <td class="td"><%= link_to "Marcar como entregue", new_entrega_interna_path(:entrega_externa_id => encomenda.entrega_externa.try(:id)) %></td>
           <td class="td"><%= link_to "Editar", edit_entrega_externa_path(encomenda) %></td>
           <td class="td"><%= link_to "Deletar", encomenda, method: :delete, data: { confirm: "Are you sure?" } %></td>

@@ -4,7 +4,7 @@ class EntregaInternasController < ApplicationController
 
   # GET /entrega_internas or /entrega_internas.json
   def index
-    if !current_user_morador()
+    if !current_user_morador?()
       @entrega_internas = EntregaInterna.all
     else
       @entrega_internas = EntregaInterna.joins("INNER JOIN encomendas ON 
