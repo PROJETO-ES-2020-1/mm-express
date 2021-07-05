@@ -1,3 +1,24 @@
-// Place all the styles related to the Encomendas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin-bottom: 100px;
+}
+
+.head_tabela {
+  background-color: #168758;
+  font-size: 20px;
+}
+
+.th,
+.td {
+  padding: 15px;
+}
+
+tr:nth-of-type(even) {
+  background-color: #F5F5F5;
+}
