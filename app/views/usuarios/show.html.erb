@@ -1,5 +1,7 @@
+<body class="page">
 <p id="notice"><%= notice %></p>
 
+<div class="show">
 <p>
   <strong>Nome:</strong>
   <%= @usuario.nome %>
@@ -16,7 +18,7 @@
 </p>
 
 <p>
-  <strong>Cpf:</strong>
+  <strong>CPF:</strong>
   <%= @usuario.cpf %>
 </p>
 
@@ -34,6 +36,11 @@
   <strong>Ismorador:</strong>
   <%= @usuario.isMorador %>
 </p>
+</div>
 
+<div>
 <%= link_to 'Edit', edit_usuario_path(@usuario) %> |
 <%= link_to 'Back', usuarios_path %>
+</div>
+
+</body>

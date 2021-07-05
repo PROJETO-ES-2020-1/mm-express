@@ -1,5 +1,7 @@
+<body class="page">
 <p id="notice"><%= notice %></p>
 
+<div class="show">
 <p>
   <strong>Data prevista entrega:</strong>
   <%= @sobreaviso_de_entrega.data_prevista_entrega %>
@@ -14,6 +16,8 @@
   <strong>Usuario:</strong>
   <%= @sobreaviso_de_entrega.usuario_id %>
 </p>
-
+</div>
+<div>
 <%= link_to 'Edit', edit_sobreaviso_de_entrega_path(@sobreaviso_de_entrega) %> |
 <%= link_to 'Back', sobreaviso_de_entregas_path %>
+</div>

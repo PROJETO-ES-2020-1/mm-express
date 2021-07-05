@@ -1,27 +1,28 @@
+<body class="page">
 <p id="notice"><%= notice %></p>
 
 <h1>Entrega Internas</h1>
 
-<table>
-  <thead>
+<table cellpadding="0" border="0" align="center" cellspacing="0">
+  <thead class="head_tabela">
     <tr>
-      <th>Data entrega</th>
-      <th>Hora recebida</th>
-      <th>Recebido por</th>
-      <th colspan="3"></th>
+      <th class="td">Data entrega</th>
+      <th class="th">Hora recebida</th>
+      <th class="th">Recebido por</th>
+      <th class="th" colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @entrega_internas.each do |entrega_interna| %>
       <tr>
-        <td><%= entrega_interna.data_entrega %></td>
-        <td><%= entrega_interna.hora_recebida %></td>
-        <td><%= entrega_interna.recebido_por %></td>
-        <td><%= entrega_interna.recebido_por %></td>
-        <td><%= link_to "Show", entrega_interna %></td>
-        <td><%= link_to "Edit", edit_entrega_interna_path(entrega_interna) %></td>
-        <td><%= link_to "Destroy", entrega_interna, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <td class="td"><%= entrega_interna.data_entrega %></td>
+        <td class="td"><%= entrega_interna.hora_recebida %></td>
+        <td class="td"><%= entrega_interna.recebido_por %></td>
+        <td class="td"><%= entrega_interna.recebido_por %></td>
+        <td class="td"><%= link_to "Show", entrega_interna %></td>
+        <td class="td"><%= link_to "Edit", edit_entrega_interna_path(entrega_interna) %></td>
+        <td class="td"><%= link_to "Destroy", entrega_interna, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,3 +31,4 @@
 <br>
 
 <%= link_to "New Entrega Interna", new_entrega_interna_path %>
+</body>
