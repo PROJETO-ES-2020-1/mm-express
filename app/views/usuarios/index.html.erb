@@ -1,34 +1,35 @@
+<body class="page">
 <p id="notice"><%= notice %></p>
 
 <h1>Usuarios</h1>
 
-<table>
-  <thead>
+<table cellpadding="0" border="0" align="center" cellspacing="0">
+  <thead class="head_tabela">
     <tr>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Telefone</th>
-      <th>Cpf</th>
-      <th>Numero residencia</th>
-      <th>Bloco residencia</th>
-      <th>Ismorador</th>
-      <th colspan="3"></th>
+      <th class="th">Nome</th>
+      <th class="th">Email</th>
+      <th class="th">Telefone</th>
+      <th class="th">Cpf</th>
+      <th class="th">Numero residencia</th>
+      <th class="th">Bloco residencia</th>
+      <th class="th">Ismorador</th>
+      <th class="th" colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @usuarios.each do |usuario| %>
       <tr>
-        <td><%= usuario.nome %></td>
-        <td><%= usuario.email %></td>
-        <td><%= usuario.telefone %></td>
-        <td><%= usuario.cpf %></td>
-        <td><%= usuario.numero_residencia %></td>
-        <td><%= usuario.bloco_residencia %></td>
-        <td><%= usuario.isMorador %></td>
-        <td><%= link_to 'Visualizar', usuario %></td>
-        <td><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Excluir', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="td" class="td"><%= usuario.nome %></td>
+        <td class="td"><%= usuario.email %></td>
+        <td class="td"><%= usuario.telefone %></td>
+        <td class="td"><%= usuario.cpf %></td>
+        <td class="td"><%= usuario.numero_residencia %></td>
+        <td class="td"><%= usuario.bloco_residencia %></td>
+        <td class="td"><%= usuario.isMorador %></td>
+        <td class="td"><%= link_to 'Visualizar', usuario %></td>
+        <td class="td"><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
+        <td class="td"><%= link_to 'Excluir', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -37,3 +38,4 @@
 <br>
 
 <%= link_to 'New Usuario', new_usuario_path %>
+</body>
