@@ -1,5 +1,7 @@
+<body class="page">
 <p id="notice"><%= notice %></p>
 
+<div class="show">
 <p>
   <strong>Datasolicitada:</strong>
   <%= @solicitacao_repass.dataSolicitada %>
@@ -9,6 +11,9 @@
   <strong>Entregaexterna:</strong>
   <%= @solicitacao_repass.entrega_externa_id %>
 </p>
-
+</div>
+<div>
 <%= link_to 'Edit', edit_solicitacao_repass_path(@solicitacao_repass) %> |
 <%= link_to 'Back', solicitacao_repasses_path %>
+</div>
+</body>

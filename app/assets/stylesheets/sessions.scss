@@ -1,3 +1,118 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.login_page {
+  background-color: #168758;
+}
+
+.page {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  margin-top: 200px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label_email,
+.label_senha {
+  font-size: 30px;
+}
+
+.email,
+.senha {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  border: 1px solid black;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 17px;
+  padding: 5px;
+  line-height: 28px;
+}
+
+.logar {
+  font-size: 30px;
+  color: white;
+  border: 1px solid black;
+  border-radius: 17px;
+  background-color: black;
+  padding: 15px;
+  line-height: 10px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #168758;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 1px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+  color: black;
+}
+
+.close-btn {
+  padding-top: 6px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  margin-left: 5px !important;
+}
+
+.close-btn-a a:hover {
+  margin-right: 3px !important;
+  border-radius: 50% !important;
+}
+
+.sidenav a:hover {
+  color: white !important;
+}
+
+.sidenav .close-btn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.menu {
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 1600px;
+  margin-bottom: 1900px;
+}
+
+header {
+  margin-top: -60px;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}

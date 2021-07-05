@@ -1,15 +1,31 @@
 <header>
-  <div>
+
+  <!-- CODIGO JAVASCRIP APENAS PARA EFEITO DE ABRIR E FECHAR O MENU -->
+  <!-- FOI USADO JAVASCRIPT POR NAO SER POSSIVEL FAZER ISSO USANDO APENAS RUBY/RAILS -->
+  <script>
+      function openNav() {
+          document.getElementById("mySidenav").style.width = "270px";
+      }
+
+      function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+      }
+  </script>
+
+  <span class="menu" onclick="openNav()">&#9776; Menu</span>
+  <div id="mySidenav" class="sidenav">
     <nav>
       <ul>
+
         <% if logged_in? %>
           <li><%= link_to "Conta", "/usuarios/#{current_user.id}" %></li>
             <li>
               <ul>
-                <li><%= link_to "Editar dados da conta", "/usuarios/#{current_user.id}/edit" %></li>
-              </ul>
-              <ul>
                 <li><%= link_to "Contas", "/usuarios" %></li>
+                <div class="close-btn-a">
+                  <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+                </div>
+                <li><%= link_to "Editar dados da conta", "/usuarios/#{current_user.id}/edit" %></li>
               </ul>
             </li>
           <li><%= link_to "Encomendas", "/encomendas" %></li>

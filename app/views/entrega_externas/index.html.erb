@@ -1,28 +1,29 @@
+<body class="page">
 <p id="notice"><%= notice %></p>
 
 <h1>Entrega Externas</h1>
 
-<table>
-  <thead>
+<table cellpadding="0" border="0" align="center" cellspacing="0">
+  <thead class="head_tabela">
     <tr>
-      <th>Datachegada</th>
-      <th>Horachegada</th>
-      <th>Recebidopor</th>
-      <th>Encomenda</th>
-      <th colspan="3"></th>
+      <th class="th">Datachegada</th>
+      <th class="th">Horachegada</th>
+      <th class="th">Recebidopor</th>
+      <th class="th">Encomenda</th>
+      <th class="th" colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @entrega_externas.each do |entrega_externa| %>
       <tr>
-        <td><%= entrega_externa.dataChegada %></td>
-        <td><%= entrega_externa.horaChegada %></td>
-        <td><%= entrega_externa.recebidoPor %></td>
-        <td><%= link_to 'Visualizar', entrega_externa %></td>
-        <td><%= link_to 'Editar', edit_entrega_externa_path(entrega_externa) %></td>
-        <td><%= link_to 'Marcar como entregue', new_entrega_interna_path(:entrega_externa_id => entrega_externa.id)  %></td>
-        <td><%= link_to 'Excluir', entrega_externa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="td"><%= entrega_externa.dataChegada %></td>
+        <td class="td"><%= entrega_externa.horaChegada %></td>
+        <td class="td"><%= entrega_externa.recebidoPor %></td>
+        <td class="td"><%= link_to 'Visualizar', entrega_externa %></td>
+        <td class="td"><%= link_to 'Editar', edit_entrega_externa_path(entrega_externa) %></td>
+        <td class="td"><%= link_to 'Marcar como entregue', new_entrega_interna_path(:entrega_externa_id => entrega_externa.id)  %></td>
+        <td class="td"><%= link_to 'Excluir', entrega_externa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,3 +32,4 @@
 <br>
 
 <%= link_to 'New Entrega Externa', new_entrega_externa_path %>
+</body>

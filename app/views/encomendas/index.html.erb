@@ -1,34 +1,37 @@
+<body class="page">
 <p id="notice"><%= notice %></p>
 
 <h1>Encomendas - Entregas externas</h1>
 
-<table>
-  <thead>
+<table cellpadding="0" border="0" align="center" cellspacing="0">
+  <thead class="head_tabela">
     <tr>
-      <th>Peso</th>
-      <th>Remetente</th>
-      <th>Morador</th>
-      <th>Data de chegada</th>
-      <th>Recebido por</th>
-      <th colspan="3"></th>
+      <th class="th">ID</th>
+      <th class="th">Peso</th>
+      <th class="th">Remetente</th>
+      <th class="th">Morador</th>
+      <th class="th">Data de chegada</th>
+      <th class="th">Recebido por</th>
+      <th class="th" colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @encomendas.each do |encomenda| %>
       <tr>
-        <td><%= encomenda.peso %></td>
-        <td><%= encomenda.remetente %></td>
-        <td><%= encomenda.usuario.try(:nome) %> </td>
-        <td><%= encomenda.entrega_externa.try(:dataChegada) %></td>
-        <td><%= encomenda.entrega_externa.try(:recebidoPor) %></td>
+        <td class="td"><%= encomenda.id %></td>
+        <td class="td"><%= encomenda.peso %></td>
+        <td class="td"><%= encomenda.remetente %></td>
+        <td class="td"><%= encomenda.usuario.try(:nome) %> </td>
+        <td class="td"><%= encomenda.entrega_externa.try(:dataChegada) %></td>
+        <td class="td"><%= encomenda.entrega_externa.try(:recebidoPor) %></td>
 
-        <td><%= link_to "Visualizar", encomenda %></td>
+        <td class="td"><%= link_to "Visualizar", encomenda %></td>
 
         <% if !current_user_morador() %>
-          <td><%= link_to "Marcar como entregue", new_entrega_interna_path(:entrega_externa_id => encomenda.entrega_externa.try(:id)) %></td>
-          <td><%= link_to "Editar", edit_entrega_externa_path(encomenda) %></td>
-          <td><%= link_to "Deletar", encomenda, method: :delete, data: { confirm: "Are you sure?" } %></td>
+          <td class="td"><%= link_to "Marcar como entregue", new_entrega_interna_path(:entrega_externa_id => encomenda.entrega_externa.try(:id)) %></td>
+          <td class="td"><%= link_to "Editar", edit_entrega_externa_path(encomenda) %></td>
+          <td class="td"><%= link_to "Deletar", encomenda, method: :delete, data: { confirm: "Are you sure?" } %></td>
         <% end %>
         
       </tr>
@@ -37,3 +40,4 @@
 </table>
 
 <br>
+</body>

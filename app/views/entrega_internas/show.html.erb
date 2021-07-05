@@ -1,5 +1,7 @@
+<body class="page">
 <p id="notice"><%= notice %></p>
 
+<div class="show">
 <p>
   <strong>Data entrega:</strong>
   <%= @entrega_interna.data_entrega %>
@@ -14,6 +16,9 @@
   <strong>Recebido por:</strong>
   <%= @entrega_interna.recebido_por %>
 </p>
-
+</div>
+<div>
 <%= link_to 'Edit', edit_entrega_interna_path(@entrega_interna) %> |
 <%= link_to 'Back', entrega_internas_path %>
+</div>
+</body>

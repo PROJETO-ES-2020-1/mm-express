@@ -1,5 +1,7 @@
+<body class="page">
 <p id="notice"><%= notice %></p>
 
+<div class="show">
 <p>
   <strong>Peso:</strong>
   <%= @encomenda.peso %>
@@ -29,9 +31,14 @@
   <strong>Recebido por:</strong>
   <%= @encomenda.entrega_externa.recebidoPor %>
 </p>
+</div>
 
+<div>
 <% if !current_user_morador() %>
   <%= link_to "Editar", edit_encomenda_path(@encomenda) %> |
 <% end %>
 
 <%= link_to "Voltar", encomendas_path %>
+</div>
+
+</body>
