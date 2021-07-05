@@ -13,13 +13,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :dataSolicitada %>
+    <%= form.label :Data_solicitada %>
     <%= form.date_select :dataSolicitada %>
   </div>
 
   <div class="field">
-    <%= form.label :entrega_externa_id %>
-    <%= form.select(:entrega_externa_id, EntregaExterna.all.pluck(:id)) %>
+    <%= form.label :Data_de_chegada_interna_da_encomenda %>
+    <%= form.select(:entrega_externa_id, EntregaExterna.all.pluck(:dataChegada, :id)) %>
   </div>
 
   <div class="actions">

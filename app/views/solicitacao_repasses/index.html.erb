@@ -6,22 +6,20 @@
 <table cellpadding="0" border="0" align="center" cellspacing="0">
   <thead class="head_tabela">
     <tr>
-      <th class="th">ID</th>
-      <th class="th">Datasolicitada</th>
-      <th class="th">Entregaexterna</th>
-      <th class="th" colspan="3"></th>
+      <th>ID</th>
+      <th>Datasolicitada</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @solicitacao_repasses.each do |solicitacao_repass| %>
       <tr>
-        <td class="td"><%= solicitacao_repass.id %></td>
-        <td class="td"><%= solicitacao_repass.dataSolicitada %></td>
-        <td class="td"><%= solicitacao_repass.entrega_externa_id %></td>
-        <td class="td"><%= link_to 'Show', solicitacao_repass %></td>
-        <td class="td"><%= link_to 'Edit', edit_solicitacao_repass_path(solicitacao_repass) %></td>
-        <td class="td"><%= link_to 'Destroy', solicitacao_repass, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= solicitacao_repass.id %></td>
+        <td><%= solicitacao_repass.dataSolicitada %></td>
+        <td><%= link_to "Show", solicitacao_repass %></td>
+        <td><%= link_to "Edit", edit_solicitacao_repass_path(solicitacao_repass) %></td>
+        <td><%= link_to "Destroy", solicitacao_repass, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,5 +27,5 @@
 
 <br>
 
-<%= link_to 'New Solicitacao Repass', new_solicitacao_repass_path %>
+<%= link_to "New Solicitacao Repass", new_solicitacao_repass_path %>
 </body>
