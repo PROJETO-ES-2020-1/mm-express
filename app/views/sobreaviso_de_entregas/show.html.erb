@@ -16,8 +16,6 @@
   <strong>Usuario:</strong>
   <%= @sobreaviso_de_entrega.usuario_id %>
 </p>
-</div>
-<div>
-<%= link_to 'Edit', edit_sobreaviso_de_entrega_path(@sobreaviso_de_entrega) %> |
-<%= link_to 'Back', sobreaviso_de_entregas_path %>
-</div>
+
+<%= link_to "Editar", edit_sobreaviso_de_entrega_path(@sobreaviso_de_entrega) %> |
+<%= link_to "Voltar", sobreaviso_de_entregas_path %>
