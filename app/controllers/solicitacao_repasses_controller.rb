@@ -5,6 +5,14 @@ class SolicitacaoRepassesController < ApplicationController
   # GET /solicitacao_repasses or /solicitacao_repasses.json
   def index
     @solicitacao_repasses = SolicitacaoRepasse.all
+    @solicitacoes = []
+    @solicitacao_repasses.each { |solicitacao|
+      @encomenda = EntregaExterna.find(params[:id], solicitacao.entrega_externa_id)
+      if !@current_user.isMorador || @encomenda.encomenda.usuario.id == @current_user.id
+        @solicitacoes.push(solicitacao)
+      end
+    }
+    @solicitacao_repasses = @solicitacoes
   end
 
   # GET /solicitacao_repasses/1 or /solicitacao_repasses/1.json
@@ -14,15 +22,36 @@ class SolicitacaoRepassesController < ApplicationController
   # GET /solicitacao_repasses/new
   def new
     @solicitacao_repass = SolicitacaoRepasse.new
+    @entregas_externas = EntregaExterna.all
+    @entregas_externas_usuario = []
+    @entregas_externas.each { |entrega|
+      if !@current_user.isMorador || entrega.encomenda.usuario.id == @current_user.id
+        @entregas_externas_usuario.push(entrega)
+      end
+    }
   end
 
   # GET /solicitacao_repasses/1/edit
   def edit
+    @entregas_externas = EntregaExterna.all
+    @entregas_externas_usuario = []
+    @entregas_externas.each { |entrega|
+      if !@current_user.isMorador || entrega.encomenda.usuario.id == @current_user.id
+        @entregas_externas_usuario.push(entrega)
+      end
+    }
   end
 
   # POST /solicitacao_repasses or /solicitacao_repasses.json
   def create
     @solicitacao_repass = SolicitacaoRepasse.new(solicitacao_repasse_params)
+    @entregas_externas = EntregaExterna.all
+    @entregas_externas_usuario = []
+    @entregas_externas.each { |entrega|
+      if !@current_user.isMorador || entrega.encomenda.usuario.id == @current_user.id
+        @entregas_externas_usuario.push(entrega)
+      end
+    }
 
     respond_to do |format|
       if @solicitacao_repass.save
