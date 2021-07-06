@@ -53,12 +53,10 @@
   </div>
 
 
-  <% if !current_user_morador?() %>
     <div class="field">
       <%= form.label :Morador, "É um morador?" %>
       <%= form.select :isMorador, ["Sim", "Nao"] %>
     </div>
-  <% end %>
 
   <div class="actions">
     <%= form.submit %>
