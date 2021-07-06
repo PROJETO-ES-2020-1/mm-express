@@ -61,7 +61,7 @@ class SolicitacaoRepassesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_solicitacao_repasse
-    @solicitacao_repass = current_user.solicitacao_repasses.find(params[:id])
+    @solicitacao_repass = SolicitacaoRepasse.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.

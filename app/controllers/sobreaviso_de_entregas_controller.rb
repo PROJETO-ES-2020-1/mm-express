@@ -4,7 +4,7 @@ class SobreavisoDeEntregasController < ApplicationController
 
   # GET /sobreaviso_de_entregas or /sobreaviso_de_entregas.json
   def index
-    if !current_user_morador()
+    if !current_user_morador?()
       @sobreaviso_de_entregas = SobreavisoDeEntrega.all
     else
       @sobreaviso_de_entregas = SobreavisoDeEntrega.where("usuario_id = ?", current_user)
