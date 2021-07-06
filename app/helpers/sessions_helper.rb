@@ -13,7 +13,7 @@ module SessionsHelper
 
   def block_access
     if current_user.present?
-      redirect_to usuarios_path
+      redirect_to encomendas_path
     end
   end
 
