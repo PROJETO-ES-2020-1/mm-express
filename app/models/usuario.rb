@@ -3,6 +3,7 @@ require "cpf_cnpj"
 class Usuario < ApplicationRecord
   has_many :encomendas, :dependent => :destroy
   has_many :sobreaviso_de_entregas, :dependent => :destroy
+  has_many :solicitacao_repasses, :dependent => :destroy
 
   has_secure_password
 
