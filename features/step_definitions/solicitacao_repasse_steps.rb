@@ -41,7 +41,7 @@ And("acesso a pagina de soliciatacao de repasse") do
 end
 
 And("clico em editar a solicitacao de repasse com id {string}") do |id|
-  find("tr", text: id). click_link("Edit")
+  find("tr", text: id).click_link("Edit")
   expect(page).to have_content("Editing Solicitacao Repass")
 end
 
@@ -50,11 +50,11 @@ And("clico em atualizar Solicitacao de repasse") do
 end
 
 And("clico em exlcuir a solicitacao de repasse com id {string}") do |id|
-  find("tr", text: id). click_link("Destroy")
+  find("tr", text: id).click_link("Destroy")
 end
 
 Then("eu vejo a mensagem de solicitacao de repasse criada com sucesso") do
-  assert_selector("p#notice", text: "")
+  expect(page).to have_content("was successfully created")
 end
 
 Then("eu vejo a mensagem de solicitacao de repasse atualizada com sucesso") do

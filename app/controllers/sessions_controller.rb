@@ -5,12 +5,7 @@ class SessionsController < ApplicationController
     @usuario = Usuario.find_by(email: params[:session][:email])
     if @usuario && @usuario.authenticate(params[:session][:password])
       sign_in(@usuario)
-
-      if current_user_morador()
-        redirect_to encomendas_path
-      else
-        redirect_to encomendas_path
-      end
+      redirect_to encomendas_path
     else
       render "new"
     end

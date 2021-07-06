@@ -2,4 +2,8 @@
 
 <%= render "form", usuario: @usuario %>
 
-<%= link_to "Voltar", usuarios_path %>
+<% if logged_in? %>
+    <%= link_to "Voltar", usuarios_path %>
+<% else %>
+<%= link_to "Voltar", root_path %>
+<% end %>

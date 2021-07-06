@@ -4,8 +4,12 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios or /usuarios.json
   def index
-    if !current_user_morador()
-      @usuarios = Usuario.all
+    if !current_user_morador?()
+      if params[:isMorador]
+        @usuarios = Usuario.where(:isMorador => params[:isMorador])
+      else
+        @usuarios = Usuario.all
+      end
     else
       @usuarios = Usuario.where("id = ?", current_user.id)
     end

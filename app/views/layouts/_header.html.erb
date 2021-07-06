@@ -18,43 +18,29 @@
       <ul>
 
         <% if logged_in? %>
-          <li><%= link_to "Conta", "/usuarios/#{current_user.id}" %></li>
+          <li><%= link_to "Usuarios", "/usuarios" %></li>
             <li>
               <ul>
-                <li><%= link_to "Contas", "/usuarios" %></li>
+                <li><%= link_to "Minha conta", "/usuarios/#{current_user.id}" %></li>
                 <div class="close-btn-a">
                   <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
                 </div>
-                <li><%= link_to "Editar dados da conta", "/usuarios/#{current_user.id}/edit" %></li>
+                <% if !current_user_morador? %>
+                  <li><%= link_to "Funcionarios", usuarios_path(:isMorador => "0") %></li>
+                  <li><%= link_to "Moradores", usuarios_path(:isMorador => "1") %></li>
+                <% end %>
+                
               </ul>
             </li>
           <li><%= link_to "Encomendas", "/encomendas" %></li>
-          <% if !current_user_morador %>
-            <li>
-              <ul>
-              <li><%= link_to "Criar", "/entrega_externas/new" %></li> 
-              </ul>
-            </li>
-          <% end %>
+          <li><%= link_to "Entregas externas", "/entrega_externas" %></li>
           <li><%= link_to "Entregas internas", "/entrega_internas" %></li>
           <li><%= link_to "Solicitações de repasse", "/solicitacao_repasses" %></li>
-          <% if current_user_morador %>
-            <li>
-              <ul>
-                <li><%= link_to "Criar", "/solicitacao_repasses/new" %></li>
-              </ul>
-            </li>
-          <% end %>
           <li><%= link_to "Sobreaviso de entregas", "/sobreaviso_de_entregas" %></li>
-          <% if current_user_morador %>
-            <li>
-              <ul>
-                <li><%= link_to "Criar", "/sobreaviso_de_entregas/new" %></li>
-              </ul>
-            </li>
-            <% end %>
+
           <br>
           <%= link_to "Log out", sign_out_path, method: "delete" %>
+
         <% end %>
       </ul>
     </nav>
