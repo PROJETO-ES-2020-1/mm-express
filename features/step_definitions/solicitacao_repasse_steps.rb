@@ -41,7 +41,7 @@ And("acesso a pagina de soliciatacao de repasse") do
 end
 
 And("clico em editar a solicitacao de repasse com id {string}") do |id|
-  find("tr", text: id).click_link("Edit")
+  first("tr", text: id).click_link("Edit")
   expect(page).to have_content("Editing Solicitacao Repass")
 end
 
