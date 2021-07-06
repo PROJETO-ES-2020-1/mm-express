@@ -1,11 +1,13 @@
-Given("ha um usuario de nome {string}, email {string}, password {string}, password confimation {string},  telefone {string}, cpf: {string},  numero residencia: {string}, bloco_residencia: {string} e isMorador {string} cadastrado por um funcionario") do |nome, email, password, password_confirmation, telefone, cpf, num_residencia, bloco_residencia, isMorador|
+Given("ha um usuario do tipo funcionario logado") do
   Usuario.create(nome: "administrador FAB", email: "administrador@fab.com.br", password: "ADMINFAB", telefone: "99999999", cpf: "237.713.510-22", numero_residencia: 1, bloco_residencia: 1, isMorador: false)
 
   visit "/sign_in"
   fill_in "session[email]", :with => "administrador@fab.com.br"
   fill_in "session[password]", :with => "ADMINFAB"
   click_button "Log in"
+end
 
+Given("ha um usuario de nome {string}, email {string}, password {string}, password confimation {string},  telefone {string}, cpf: {string},  numero residencia: {string}, bloco_residencia: {string} e isMorador {string} cadastrado por um funcionario") do |nome, email, password, password_confirmation, telefone, cpf, num_residencia, bloco_residencia, isMorador|
   visit "/usuarios/new"
   expect(page).to have_current_path("/usuarios/new")
 
@@ -21,9 +23,13 @@ Given("ha um usuario de nome {string}, email {string}, password {string}, passwo
 
   click_button "Create Usuario"
   expect(page).not_to have_content("prohibited this usuario from being saved")
+end
 
+Given("O usuario logado faz logout") do
   click_link "Log out"
 end
+
+#  |nome, email, password, password_confirmation, telefone, cpf, num_residencia, bloco_residencia, isMorador|
 
 When("eu acesso a pagina de criacao de sobreavisos de entrega de encomendas") do
   visit "/sobreaviso_de_entregas/new"
